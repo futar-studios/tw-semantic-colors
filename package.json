@@ -1,0 +1,86 @@
+{
+  "name": "tw-semantic-colors",
+  "version": "1.0.0",
+  "description": "A plugin for Tailwind that adds semantic colors",
+  "homepage": "https://github.com/futar-studios/tw-semantic-colors",
+  "bugs": {
+    "url": "https://github.com/futar-studios/tw-semantic-colors/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futar-studios/tw-semantic-colors.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/lib.cjs",
+  "module": "dist/lib.js",
+  "types": "dist/lib.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/lib.d.ts",
+        "default": "./dist/lib.cjs"
+      },
+      "import": {
+        "types": "./dist/lib.d.ts",
+        "default": "./dist/lib.js"
+      }
+    },
+    "./theme": {
+      "require": {
+        "types": "./dist/theme.d.ts",
+        "default": "./dist/theme.cjs"
+      },
+      "import": {
+        "types": "./dist/theme.d.ts",
+        "default": "./dist/theme.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "format": "oxfmt --config ./.oxfmtrc.json",
+    "format:check": "oxfmt --check --config ./.oxfmtrc.json",
+    "lint": "oxlint --config ./.oxlintrc.json --fix",
+    "lint:check": "oxlint --config ./.oxlintrc.json",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:integration": "vitest run --project integration",
+    "test:property": "vitest run --project property",
+    "test:unit": "vitest run --project unit",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "update-deps": "npx npm-check-updates -u"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.60.1",
+    "@types/node": "^26.6.6",
+    "@typescript/typescript6": "^6.0.2",
+    "daisyui": "^5.7.50",
+    "fast-check": "^4.10.2",
+    "npm-check-updates": "^23.1.1",
+    "oxfmt": "^0.76.0",
+    "oxlint": "^1.91.0",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^7.0.2",
+    "unplugin-dts": "^1.1.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  },
+  "peerDependencies": {
+    "daisyui": "^5.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "daisyui": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@11.20.0"
+}
